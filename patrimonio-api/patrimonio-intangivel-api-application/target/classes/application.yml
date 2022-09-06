@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: patrimonio-intangivel
+application:
+  version: 1.5.0-SNAPSHOT.34
+  name: patrimonio-intangivel-api-application
+
+hal:
+  config:
+    migration:
+      basePath: /changelog/configuration/master.yml

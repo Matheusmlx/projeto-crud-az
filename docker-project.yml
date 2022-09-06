@@ -1,0 +1,20 @@
+version: '3'
+services:
+  patrimonio-intangivel-api:
+    image: >-
+      registry.nexus.azi.srv.br/patrimonio/patrimonio-intangivel-api:1.5.0-SNAPSHOT.34
+    environment:
+      - 'DEPENDS_ON=hal-gateway:80,efornecedor-api:8020'
+      - DEPENDS_ON_TIMEOUT=380
+      - JAVA_MEMORY= -Xmx1g -Xms768m
+    env_file:
+      - variables.env
+  patrimonio-intangivel-app:
+    image: >-
+      registry.nexus.azi.srv.br/patrimonio/patrimonio-intangivel-app:1.5.0-SNAPSHOT.34
+    env_file:
+      - variables.env
+networks:
+  default:
+    external:
+      name: siganet

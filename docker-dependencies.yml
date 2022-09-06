@@ -1,0 +1,81 @@
+version: '3'
+services:
+  redis:
+    image: redis:4-alpine
+    ports:
+      - 6379:6379
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - 5672:5672
+      - 15672:15672
+  hal-config:
+    image: registry.nexus.azi.srv.br/hal/cloud/hal-config:3.3.0
+    ports:
+      - 8000:8000
+    environment:
+      - DEPENDS_ON=rabbitmq:5672
+      - JAVA_MEMORY=-Xmx256m -Xms256m -Xss512k
+    env_file:
+      - variables.env
+  hal-discovery:
+    image: registry.nexus.azi.srv.br/hal/cloud/hal-discovery:3.1.0
+    ports:
+      - 8001:8001
+    environment:
+      - DEPENDS_ON=hal-config:8000
+      - JAVA_MEMORY=-Xmx256m -Xms256m -Xss512k
+    env_file:
+      - variables.env
+  hal-gateway:
+      image: registry.nexus.azi.srv.br/hal/cloud/hal-gateway2:1.1.0
+      ports:
+          - 443:443
+          - 80:80
+      environment:
+          - DEPENDS_ON=hal-discovery:8001
+          - DEPENDS_ON_TIMEOUT=240
+          - JAVA_MEMORY=-Xmx512m -Xms100m -Xss1024k
+      volumes:
+          - ./.certificados:/root/az/development
+          - ./.letsencrypt:/etc/letsencrypt
+      env_file:
+          - variables.env
+  setup-pub:
+    image: registry.nexus.azi.srv.br/hal/setup-pub:3.14.0-PATRIMONIO
+    env_file:
+      - variables.env
+  setup-app:
+    image: registry.nexus.azi.srv.br/hal/setup-app:3.14.0-PATRIMONIO
+    env_file:
+      - variables.env
+  setup-api:
+    image: registry.nexus.azi.srv.br/hal/setup-api:3.14.0-PATRIMONIO
+    ports:
+      - 8002:8002
+    environment:
+      - server.port=8002
+      - DEPENDS_ON=hal-gateway:80
+      - DEPENDS_ON_TIMEOUT=300
+      - JAVA_MEMORY=-Xmx1024m -Xms1024m -Xss1024k
+    env_file:
+      - variables.env
+  efornecedor:
+      image: registry.nexus.azi.srv.br/efornecedor/efornecedor-app:2.0.8
+      env_file:
+          - variables.env
+  efornecedor-api:
+      image: registry.nexus.azi.srv.br/efornecedor/efornecedor-api:2.0.8
+      ports:
+          - 8020:8020
+      environment:
+          - server.port=8020
+          - DEPENDS_ON=setup-api:8002
+          - DEPENDS_ON_TIMEOUT=300
+          - JAVA_MEMORY=-Xmx1024m -Xms1024m -Xss1024k
+      env_file:
+          - variables.env
+networks:
+  default:
+    external:
+      name: siganet

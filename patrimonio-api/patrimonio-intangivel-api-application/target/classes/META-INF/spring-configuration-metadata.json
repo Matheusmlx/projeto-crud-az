@@ -1,0 +1,92 @@
+{
+  "groups": [
+    {
+      "name": "az.patrimonio-intangivel",
+      "type": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "az.patrimonio-intangivel.codigo-chat",
+      "type": "java.lang.String",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.codigo-conta-contabil",
+      "type": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.codigocontacontabil.CodigoContaContabil",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.cron-dia-agendamento-amortizacao",
+      "type": "java.lang.String",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.data-corte-inicio-cadastro-retroativo",
+      "type": "java.lang.String",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.data-limite-ativacao-retroativa",
+      "type": "java.lang.String",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.data-mensal-amortizacao",
+      "type": "java.lang.String",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.feriados-locais",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.feriados-nacionais",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.integracao",
+      "type": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.integracao.Integracao",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.mensagem-rodape-memorando-movimentacao",
+      "type": "java.lang.String",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.mostrar-botao-vida-util-indefinida",
+      "type": "java.lang.Boolean",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.quantidade-digitos-codigo-movimentacao",
+      "type": "java.lang.String",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.quantidade-digitos-numero-patrimonio",
+      "type": "java.lang.String",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.relatorio",
+      "type": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.relatorio.Relatorio",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.rotulos-personalizados",
+      "type": "java.util.Map<java.lang.String,java.lang.Object>",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    },
+    {
+      "name": "az.patrimonio-intangivel.vida-util-sem-licenca",
+      "type": "java.lang.Short",
+      "sourceType": "br.com.azi.patrimoniointangivel.configuration.properties.patrimoniointangivel.entity.PatrimonioIntangivelProperties"
+    }
+  ],
+  "hints": []
+}
